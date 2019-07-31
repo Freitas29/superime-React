@@ -3,17 +3,20 @@ import Input from '../../components/Input/Input'
 import Card from '../../components/Card/Card'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { changeValue } from '../../redux/Input/SearchFieldActions'
+import { changeValue,fetchAnime } from '../../redux/Input/SearchFieldActions'
 import './Main.css'
 
 
 const Main = props =>
             <div className="Main">
                 <div className="form-group">
-                    <Input holder="Procure por seu anime!" value={props.value} onChange={props.changeValue}/>
+                    <Input holder="Procure por seu anime!" value={props.value} onChange={props.fetchAnime}/>
                 </div>
-
+                {props.loading && <p>Carregando</p>}
                 <p>vkljdl valor: {props.value}</p>
+                <button onClick={props.fetchAnime}>
+                    click aqui
+                </button>
                 <div className="result-list">
                     <Card 
                     image="https://animeshouse.net/wp-content/uploads/2019/04/93482l-250x350.jpg"
@@ -31,9 +34,11 @@ const Main = props =>
     
     
 const mapStateToProps = state => ({
-    value: state.input.value
+    value: state.input.value,
+    loading: state.input.loading,
+
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators({changeValue},dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({changeValue,fetchAnime},dispatch)
 
 export default connect(mapStateToProps,mapDispatchToProps)(Main)

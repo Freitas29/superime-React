@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { Provider } from 'react-redux'
-import { combineReducers, createStore } from 'redux'
+import { combineReducers, createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
 import InputReducer from './redux/Input/SearchFieldReducer'
 
 const reducers = combineReducers({
     input: InputReducer,
 })
 
+const store = createStore(reducers, applyMiddleware(thunk))
+
 ReactDOM.render(
-   <Provider store={createStore(reducers)}>
+   <Provider store={store}>
         <App />
     </Provider>, document.getElementById('root')
 );
