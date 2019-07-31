@@ -1,0 +1,23 @@
+.input-search{
+    width: 100%;
+    height: 20px;
+    background-color: rgba(50,53,80,1);
+    border: 3px solid rgba(32,103,250,1);
+    border-radius: 25px;
+    outline: none;
+    padding: 15px;
+    color: #fff;
+    transition: all 0.5s;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.input-search:focus{
+    background-color: rgba(32,103,250,1);
+    border: 3px solid rgba(50,53,80,1);
+    color: #fff;
+}
+
+.input-search:focus::placeholder{
+    color: #fff;
+}
