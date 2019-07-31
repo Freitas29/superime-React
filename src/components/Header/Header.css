@@ -8,6 +8,12 @@ header{
 }
 
 header .logo{
-    font-size: 16px;
+    margin-left: 5px;
+    font-size: 20px;
     color: #fff;
+    font-weight: bold;
+}
+
+header .logo:hover{
+    cursor: pointer;
 }
