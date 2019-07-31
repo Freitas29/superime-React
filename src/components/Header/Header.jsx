@@ -1,5 +1,6 @@
 import React from 'react'
 import './Header.css'
+import Button from '../Button/Button'
 
 const Header = () => 
     <header>
@@ -8,13 +9,9 @@ const Header = () =>
         </div>
 
         <div className="links">
-            <button>
-                Registrar-se
-            </button>
+            <Button value="Registrar-se"/>
 
-            <button>
-                Entrar
-            </button>
+            <Button value="Entrar"/>
         </div>
     </header>
 

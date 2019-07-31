@@ -1,0 +1,19 @@
+.btn{
+    background-color: rgba(50,53,80,1);
+    border: 3px solid rgba(32,103,250,1);
+    padding: 6px;
+    width: 150px;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 18px;
+    margin-right: 5px;
+    margin-left: 5px;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: rgba(32,103,250,1) ;
+    border: 3px solid  rgba(50,53,80,1);
+}
