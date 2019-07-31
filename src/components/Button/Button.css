@@ -10,6 +10,7 @@
     margin-left: 5px;
     font-weight: bold;
     transition: all 0.5s;
+    outline: none;
 }
 
 .btn:hover{

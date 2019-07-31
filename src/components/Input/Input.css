@@ -19,5 +19,5 @@
 }
 
 .input-search:focus::placeholder{
-    color: #fff;
+    color: #000;
 }

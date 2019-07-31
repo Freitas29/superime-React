@@ -2,11 +2,19 @@
     overflow: hidden;
     height: 85vh;
     display: flex;
+    
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .form-group{
+    margin: 0px 30px;
     display: flex;
-    width: 50%;
+    width: 100%;
+}
+
+.result-list{
+    width: 100%;
+    margin: 0px 30px;
 }
