@@ -16,4 +16,6 @@
 .result-list{
     width: 100%;
     margin: 0px 30px;
+    position: absolute;
+    top: 60%;
 }
