@@ -22,12 +22,25 @@ export function loading(){
 }
 
 
-export const fetchAnime = e =>{
+export const fetchAnime = value =>{
     return dispach => {
         dispach(loading())
         axios({
             method: 'get',
-            url: `http://localhost:3001/api/v1/animes/?title=${e.target.value}`,
+            url: `http://localhost:3001/api/v1/animes/?title=${value}`,
+        }).
+        then(function(response){
+            dispach(fetchAnimeAsync(response))
+        })
+    }
+}
+
+export const scrapAnime = value =>{
+    return dispach => {
+        dispach(loading())
+        axios({
+            method: 'get',
+            url: `http://localhost:3001/api/v1/animes/data/${value}`,
         }).
         then(function(response){
             dispach(fetchAnimeAsync(response))

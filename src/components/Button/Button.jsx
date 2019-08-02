@@ -3,6 +3,6 @@ import './Button.css'
 
 
 const Button = props =>
-    <button className="btn">{props.value}</button>
+    <button className="btn" onClick={props.onClick}>{props.value}</button>
 
 export default Button;
