@@ -1,9 +1,7 @@
 import React from 'react';
 import './App.css';
+import Routes from './routes'
 
-const App = () =>
-  <div>
-    <h1>Olá app</h1>
-  </div>
+const App = () => <Routes />
 
-  export default App;
+export default App;
