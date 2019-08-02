@@ -8,14 +8,22 @@
 }
 
 .form-group{
-    margin: 0px 30px;
     display: flex;
     width: 100%;
+    position: absolute;
+    top: 30%;
 }
 
 .result-list{
     width: 100%;
     margin: 0px 30px;
     position: absolute;
-    top: 60%;
+    top: 40%;
+}
+
+.mainLoading{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 40%;
 }

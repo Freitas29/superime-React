@@ -24,9 +24,12 @@ class Main extends Component{
                     <Input holder="Procure por seu anime!" value={this.props.value} onChange={this.props.fetchAnime}/>
                     <Button value="Buscar"/>
                 </div>
-
-                {this.props.loading && <Loading />}
-               
+                
+                    {this.props.loading && <div className="mainLoading">
+                        <Loading />
+                        </div>
+                    }
+                               
                 <div className="result-list">
                     {animes}
                 </div>
