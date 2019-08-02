@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export function changeValue(e) {
     return {
         type: "FIELD_CHANGED",
@@ -5,10 +7,10 @@ export function changeValue(e) {
     }
 }
 
-export function fetchAnimeAsync(e){
+export function fetchAnimeAsync(response){
     return{
         type: "FETCH_ANIMES",
-        payload: e.target.value
+        payload: response
     }
 }
 
@@ -23,7 +25,13 @@ export function loading(){
 export const fetchAnime = e =>{
     return dispach => {
         dispach(loading())
-        dispach(fetchAnimeAsync(e))
+        axios({
+            method: 'get',
+            url: `http://localhost:3001/api/v1/animes/?title=${e.target.value}`,
+        }).
+        then(function(response){
+            dispach(fetchAnimeAsync(response))
+        })
     }
 }
 
