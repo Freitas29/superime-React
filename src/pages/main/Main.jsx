@@ -30,10 +30,11 @@ class Main extends Component{
     render(){
         const animes = this.props.value && this.props.value.data.map( anime =>
             <Card 
-                key={anime.id}
-                image={anime.image}
-                title={anime.title}
-                desc={anime.description} />
+            key={anime.id}
+            image={anime.image}
+            title={anime.title}
+            desc={anime.description}
+            id={anime.id} />
         )
         return(
             <div className="Main">
