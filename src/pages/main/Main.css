@@ -1,7 +1,6 @@
 .Main{
     height: 85vh;
     display: flex;
-    
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -12,6 +11,7 @@
     width: 100%;
     position: absolute;
     top: 30%;
+    justify-content: center;
 }
 
 .result-list{
