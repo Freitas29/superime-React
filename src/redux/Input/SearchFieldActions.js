@@ -1,9 +1,23 @@
 import axios from 'axios'
+// import ApolloCliente from 'apollo-boost'
+// import { gql } from 'apollo-boost'
+
+// const client = new ApolloCliente({
+//     uri: 'http://localhost:3001/graphql',
+// })
 
 export function changeValue(e) {
     return {
         type: "FIELD_CHANGED",
         payload: e.target.value
+    }
+}
+
+export function testeGraph(response){
+    debugger
+    return{
+        type: "GRAPH_CHANGED",
+        payload: response
     }
 }
 
@@ -48,6 +62,26 @@ export const scrapAnime = value =>{
     }
 }
 
+// export const testeAnime = value => {
+//     return dispach => {
+//         dispach(loading())
+//         client
+//             .query({
+//                 query: gql`{
+//                     anime(id: 1) {
+//                         id
+//                         title
+//                         description
+//                         episodesCount
+//                         episodes {
+//                             url
+//                             title
+//                         }
+//                     }
+//                 }`
+//             }).then(result =>  dispach(testeGraph(result)))
+//     }
+// }
 // export function fetchAnime(e){
 //     return (dispach,e) => {
 //         dispach(loading())

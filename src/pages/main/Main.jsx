@@ -42,7 +42,6 @@ class Main extends Component{
                     <Input holder="Procure por seu anime!" value={this.props.value} onChange={e => this.handleField(e)}/>
                     <Button value="Buscar" onClick={e => this.scraperAnime()}/>
                 </div>
-                
                     {this.props.loading && <div className="mainLoading">
                         <Loading />
                         </div>
