@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import './Show.css'
-import ApolloCliente from 'apollo-boost'
+import { graphqlUrl } from '../../services/api'
 import { gql } from 'apollo-boost'
 
-const client = new ApolloCliente({
-    uri: 'http://localhost:3001/graphql',
-})
 
 class Show extends Component{
 
@@ -21,7 +18,7 @@ class Show extends Component{
 
     async componentDidMount() {
         let id = this.props.match.params.id
-            client
+            graphqlUrl
                 .query({
                     query: gql`{
                         anime(id: ${id}) {
