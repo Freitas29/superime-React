@@ -1,41 +1,54 @@
 import React, { Component } from 'react';
 import Input from '../../components/Input/Input'
 import Card from '../../components/Card/Card'
+import Button from '../../components/Button/Button'
+import Loading from '../../components/Loading/Loading'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { changeValue,fetchAnime } from '../../redux/Input/SearchFieldActions'
+import { changeValue,fetchAnime,scrapAnime } from '../../redux/Input/SearchFieldActions'
 import './Main.css'
 
 class Main extends Component{
 
+    state = {
+        anime: "",
+    }
+
+    handleField(e){
+        this.setState({anime: e.target.value})
+        this.search()
+    }
+
+    search(){
+        this.props.fetchAnime(this.state.anime)
+    }
+
+    scraperAnime() {
+        this.props.scrapAnime(this.state.anime)
+    }
+
     render(){
         const animes = this.props.value && this.props.value.data.map( anime =>
             <Card 
-                key={anime.id}
-                image={anime.image}
-                title={anime.title}
-                desc={anime.description} />
+            key={anime.id}
+            image={anime.image}
+            title={anime.title}
+            desc={anime.description}
+            id={anime.id} />
         )
         return(
             <div className="Main">
                 <div className="form-group">
-                    <Input holder="Procure por seu anime!" value={this.props.value} onChange={this.props.fetchAnime}/>
+                    <Input holder="Procure por seu anime!" value={this.props.value} onChange={e => this.handleField(e)}/>
+                    <Button value="Buscar" onClick={e => this.scraperAnime()}/>
                 </div>
-                {this.props.loading && <p>Carregando</p>}
-               
+                    {this.props.loading && <div className="mainLoading">
+                        <Loading />
+                        </div>
+                    }
+                               
                 <div className="result-list">
                     {animes}
-                    {/* <Card 
-                    image="https://animeshouse.net/wp-content/uploads/2019/04/93482l-250x350.jpg"
-                    title="Kimtesu no yaiba"
-                    desc="Japão, era Taisho. Tanjiro, um bondoso jovem que ganha a vida vendendo carvão,
-                    descobre que sua família foi massacrada por um demônio. E pra piorar, Nezuko,
-                    sua irmã mais nova e única sobrevivente, também foi transformada num demônio.
-                    Arrasado com esta sombria realidade, Tanjiro decide se tornar um matador de 
-                    demônios para fazer sua irmã voltar a ser humana, e para matar o demônio que 
-                    matou sua família. Um triste conto sobre dois irmãos,
-                    onde os destinos dos humanos e dos demônios se entrelaçam, começa agora.
-                    " /> */}
                 </div>
             </div>
     
@@ -49,6 +62,6 @@ const mapStateToProps = state => ({
 
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators({changeValue,fetchAnime},dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({changeValue,fetchAnime,scrapAnime},dispatch)
 
 export default connect(mapStateToProps,mapDispatchToProps)(Main)

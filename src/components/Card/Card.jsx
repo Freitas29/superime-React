@@ -1,6 +1,7 @@
 import React from 'react';
 import './Card.css'
 import Button from '../Button/Button'
+import { Link } from 'react-router-dom'
 
 const Card = props =>
     <div className="card">
@@ -17,7 +18,9 @@ const Card = props =>
             </div>
         </div>
         <div className="actions">
-            <Button value="Olhar"/>
+            <Link to={`animes/${props.id}`}>
+                <Button value="Olhar"/>
+            </Link>
         </div>
     </div>
 

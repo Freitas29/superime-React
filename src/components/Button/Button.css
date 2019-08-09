@@ -1,6 +1,6 @@
 .btn{
     background-color: rgba(50,53,80,1);
-    border: 3px solid rgba(32,103,250,1);
+    border: none;
     padding: 6px;
     width: 150px;
     border-radius: 25px;
@@ -16,5 +16,5 @@
 .btn:hover{
     cursor: pointer;
     background-color: rgba(32,103,250,1) ;
-    border: 3px solid  rgba(50,53,80,1);
+    border: none;
 }

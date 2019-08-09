@@ -1,9 +1,10 @@
 import React from 'react'
-import './Loading.css'
+import './Loading.scss'
+var Loader = require('react-loaders').Loader;
 
 const Loading = props =>
     <div className="loading">
-        <p>Carregando teste</p>
+        <Loader type="ball-pulse-sync" active/>
     </div>
 
 export default Loading
