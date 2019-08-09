@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './Show.css'
 import { graphqlUrl } from '../../services/api'
 import { gql } from 'apollo-boost'
-
+import { Link, NavLink } from 'react-router-dom' 
 
 class Show extends Component{
 
@@ -29,6 +29,7 @@ class Show extends Component{
                             episodesCount
                             status
                             episodes {
+                                id
                                 url
                                 title
                             }
@@ -40,6 +41,7 @@ class Show extends Component{
     
     anime(data){
         this.setState({
+            id: data.anime.id,
             image: data.anime.image,
             title: data.animetitle,
             description: data.anime.description,
@@ -56,9 +58,18 @@ class Show extends Component{
     }
 
     render(){
+        const animeId = this.state.id
         const episodes = this.state.episodes && this.state.episodes.map(ep => 
-            <div className="video-title">
-                <p>{ep.title}</p>
+            <div key={ep.id}>
+                <Link 
+                    to={{
+                        pathname: `/animes/${animeId}/episodes/`,
+                        state: { animeId, episodeUrl: ep.url,episodeTitle: ep.title, episodes: this.state.episodes}
+                    }}>    
+                    <div className="video-title">
+                        <p>{ep.title}</p>    
+                    </div>
+                </Link>
             </div>
         )
         
