@@ -1,0 +1,34 @@
+.details-player{
+    margin-right: 15px;
+    margin-left: 15px;
+    background-color: rgba(41,79,168,0.3);
+    color: #fdfdfdcf;
+    transform: scale(0.9);
+    padding: 15px;
+    border-radius: 25px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.episode{
+    background-color: rgba(41,79,168,0.4);
+    padding: 2px 15px;
+    margin: 15px 0px 15px 0px;
+    border-radius: 25px;
+    transition: all 0.5s;
+    width: 80%;
+}
+
+.episode:hover{
+    cursor: pointer;
+    transform: scale(1.04);
+}
+
+.list-episodes{
+    margin-left: 2%;
+    height: 400px;
+    width: 40%;
+    overflow-y: scroll;
+}

@@ -1,5 +1,4 @@
 .details{
-    margin-top: 15px;
     margin-right: 15px;
     margin-left: 15px;
     background-color: rgba(41,79,168,0.3);
@@ -12,6 +11,18 @@
     flex-wrap: wrap
 }
 
+.video-title{
+    background-color: rgba(41,79,168,0.4);
+    padding: 2px 15px;
+    margin: 15px 0px 15px 0px;
+    border-radius: 25px;
+    transition: all 0.5s;
+}
+
+.video-title:hover{
+    cursor: pointer;
+    transform: scale(1.04);
+}
 
 .details .details-header{
     display: flex;
