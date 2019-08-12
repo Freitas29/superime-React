@@ -57,6 +57,11 @@ class Show extends Component{
         return this.state.date_release
     }
 
+    handle_status(){
+        if(this.state.status === "emlançamento") return "Em lançamento"
+        return this.state.status
+    }
+
     render(){
         const animeId = this.state.id
         const episodes = this.state.episodes && this.state.episodes.map(ep => (
@@ -95,7 +100,7 @@ class Show extends Component{
                         <p><strong>Episodes: </strong> {this.state.episodesCount}</p>
                     </div>
                     <div className="field">
-                        <p><strong>Status: </strong> {this.state.status}</p>
+                        <p><strong>Status: </strong> {this.handle_status()}</p>
                     </div>
                     <div className="field">
                         <p><strong>Data de Lançamento: </strong> {this.handle_date_release()}</p>
