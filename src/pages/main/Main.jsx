@@ -5,6 +5,7 @@ import Button from '../../components/Button/Button'
 import Loading from '../../components/Loading/Loading'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Link } from 'react-router-dom'
 import { changeValue,fetchAnime,scrapAnime } from '../../redux/Input/SearchFieldActions'
 import './Main.css'
 
@@ -29,12 +30,14 @@ class Main extends Component{
 
     render(){
         const animes = this.props.value && this.props.value.data.map( anime =>
-            <Card 
-            key={anime.id}
-            image={anime.image}
-            title={anime.title}
-            desc={anime.description}
-            id={anime.id} />
+            <Link to={`animes/${anime.id}`}>
+                <Card 
+                key={anime.id}
+                image={anime.image}
+                title={anime.title}
+                desc={anime.description}
+                id={anime.id} />
+            </Link>
         )
         return(
             <div className="Main">

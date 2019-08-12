@@ -81,14 +81,15 @@ class Episodes extends Component {
 
     render(){
         const episodes = this.state.episodes && this.state.episodes.map(ep => 
-            <div className="episode" key={ep.id}>
-                <p onClick={(e) => this.handleEpisode(ep.title,ep.url)}>{ep.title}</p>    
+            <div className="episode"  key={ep.id}>
+                <p  key={ep.id} onClick={(e) => this.handleEpisode(ep.title,ep.url)}>{ep.title}</p>    
             </div>
         )
 
         return(
             <div className="details-player">
                 <div className="player">
+                    
                     <h1>{this.state.currentEpisode.title}</h1>
                     <Player 
                     url={this.state.currentEpisode.url}
