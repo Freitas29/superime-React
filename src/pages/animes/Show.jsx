@@ -59,7 +59,8 @@ class Show extends Component{
 
     render(){
         const animeId = this.state.id
-        const episodes = this.state.episodes && this.state.episodes.map(ep => 
+        const episodes = this.state.episodes && this.state.episodes.map(ep => (
+            ep.url.includes('error') ? <p>Episódio indisponivel</p> :
             <div key={ep.id}>
                 <Link 
                     to={{
@@ -71,7 +72,8 @@ class Show extends Component{
                     </div>
                 </Link>
             </div>
-        )
+            
+        ))
         
         return(
             <div className="details">
