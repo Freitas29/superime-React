@@ -1,0 +1,80 @@
+.containerSignUp{
+    background-color: #2c5d57 !important;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 10px;
+    background-color: white;
+    gap: 4%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.sign-up{
+    
+    padding: 2%;
+    width: 100%;
+}
+
+.image-background{
+    width: 100%;
+    height: 90vh;
+}
+
+.image-background img{
+    width: 100%;
+    height: 100%;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.signUp{
+    background-color: #292b29;  
+}
+
+input{
+    margin: 5px 0px;
+}
+
+
+.form{
+    width: 85%;
+    padding: 2%;
+    margin-left: 2%;
+    width: 85%;
+    position: relative;
+    background-color: #292b29;
+    height: auto;
+    border-radius: 25px;
+    padding: 15px;
+    display: flex;
+    margin-top: 15px;
+    transition: all 0.5s;
+}
+
+.form:hover{
+    transform: scale(1.04);
+}
+
+.card-header h3{
+    color: #fff;
+    text-transform: uppercase
+}
+
+.card-form{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

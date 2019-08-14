@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import './User.css'
+import './SignUp.css'
+import college from '../../assets/midoriya.jpg'
 import Input from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
 import {axiosUrl as api} from '../../services/api'
@@ -14,6 +15,7 @@ class User extends Component{
     state = {
         email: null,
         password: null,
+        name: null,
     }
 
     handleEmail = (e) => {
@@ -25,6 +27,12 @@ class User extends Component{
     handlePassword = (e) => {
         this.setState({
             password: e.target.value
+        })
+    }
+
+    handleName = (e) => {
+        this.setState({
+            name: e.targer.value
         })
     }
 
@@ -51,16 +59,19 @@ class User extends Component{
     }
     render(){
         const signIn = (
-        <div className="sign-in">
-            <div className="card form">
+        <div className="sign-up">
+            <div className="form">
                 <div className="card-header">
-                    <h3>Olá, faça seu login ;)</h3>
+                    <h3>Olá, faça seu Cadastro</h3>
                 </div>
 
                 <div className="card-form">
                     <Input holder="E-mail" onChange={this.handleEmail} value={this.state.email}/>
 
                     <Input holder="Senha" type="password" onChange={this.handlePassword} value={this.state.password}/>
+                
+                    <Input holder="Nome" onChange={this.handleName} value={this.state.name}/>
+
                 </div>
                 <div className="card-footer">
                     <Button value="Entrar" onClick={this.signIn}/>
@@ -70,14 +81,16 @@ class User extends Component{
         )
 
         const image = (
-            <h1>Image</h1>
+            <div className="image-background">
+                <img src={college} />
+            </div> 
         )
 
         return(
             <>
-            <div className="container">
-               {signIn}
+            <div className="containerSignUp">
                {image}
+               {signIn}
             </div>
             <ToastContainer />
             </>
