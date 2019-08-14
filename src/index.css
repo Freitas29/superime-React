@@ -2,7 +2,7 @@ body {
   margin: 0; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to right, #7474bf, #348ac7);
+  background: #292b29;
   overflow-x: hidden;
 }
 
