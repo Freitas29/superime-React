@@ -6,9 +6,11 @@ import { Provider } from 'react-redux'
 import { combineReducers, createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import InputReducer from './redux/Input/SearchFieldReducer'
+import UserReducer from './redux/User/UserReducer'
 
 const reducers = combineReducers({
     input: InputReducer,
+    user: UserReducer
 })
 
 const store = createStore(reducers, applyMiddleware(thunk))
