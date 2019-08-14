@@ -3,6 +3,8 @@ import './User.css'
 import Input from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
 import {axiosUrl as api} from '../../services/api'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 class User extends Component{
     
@@ -23,6 +25,8 @@ class User extends Component{
         })
     }
 
+    notifyError = () => toast.error("Seus dados estão incorretos !");
+
      signIn = async () => {
         try{
             const response = await api.post('/v1/sessions/',{
@@ -40,7 +44,7 @@ class User extends Component{
 
 
     handleErrors = () => {
-        alert("Errors")
+        this.notifyError()
     }
     render(){
         const signIn = (
@@ -67,10 +71,13 @@ class User extends Component{
         )
 
         return(
+            <>
             <div className="container">
                {signIn}
                {image}
             </div>
+            <ToastContainer />
+            </>
         )
     }
 }
