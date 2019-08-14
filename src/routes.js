@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route, Redirect, } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Main from './pages/main/Main'
 import Show from './pages/animes/Show'
@@ -18,6 +18,17 @@ const PrivateRoute = ({component: Component, ...rest}) => {
     );
 };
 
+const ProtectedRoute = ({component: Component, ...rest}) => {
+    return (
+
+        <Route {...rest} render={props => (
+            isAuth() ?
+            <Redirect to="/" />
+            : <Component {...props} /> 
+        )} />
+    );
+};
+
 const Routes = () => (
     <Router>
         <Header />
@@ -25,7 +36,7 @@ const Routes = () => (
             <Route exact path="/" component={ Main } />
             <Route exact path="/animes/:id" component={ Show } />
             <Route path="/animes/:id/episodes" component={ Episodes } />
-            <Route path="/user" component={ User } />
+            <ProtectedRoute path="/user" component={ User } />
             {/* <PrivateRoute path="/user/edit" component={ UserEdit } */}
         </Switch>
     </Router>
