@@ -11,7 +11,8 @@
 }
 
 
-.card{
+
+.form{
     display: flex;
     flex-direction: column;
     height: auto;

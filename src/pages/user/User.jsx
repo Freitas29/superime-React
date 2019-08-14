@@ -45,7 +45,7 @@ class User extends Component{
     render(){
         const signIn = (
         <div className="sign-in">
-            <div className="card">
+            <div className="card form">
                 <div className="card-header">
                     <h3>Olá, faça seu login ;)</h3>
                 </div>
