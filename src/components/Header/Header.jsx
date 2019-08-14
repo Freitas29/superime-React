@@ -12,9 +12,13 @@ const Header = () =>
         </Link>
 
         <div className="links">
-            <Button value="Registrar-se"/>
+            <Link to="/user">
+                <Button value="Registrar-se"/>
+            </Link>
 
-            <Button value="Entrar"/>
+            <Link to="/user">
+                <Button value="Entrar"/>
+            </Link>
         </div>
     </header>
 

@@ -1,0 +1,45 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 10px;
+    gap: 4%;
+}
+
+.sign-in{
+    padding: 2%;
+    width: 100%;
+}
+
+
+.card{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: #20264C;
+}
+
+input{
+    margin: 5px 0px;
+}
+
+.card-header h3{
+    color: #fff;
+    text-transform: uppercase
+}
+
+.card-form{
+    background-color: #20264C;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-footer{
+    display: flex;
+    background-color: #20264C;
+    justify-content: center;
+    align-items: center;
+}
