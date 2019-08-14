@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { createToken } from '../../redux/User/UserAction'
 
-class User extends Component{
+class SignIn extends Component{
     
     state = {
         email: null,
@@ -94,4 +94,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({createToken},dispatch)
 
-export default connect(mapStateToProps,mapDispatchToProps)(User)
+export default connect(mapStateToProps,mapDispatchToProps)(SignIn)

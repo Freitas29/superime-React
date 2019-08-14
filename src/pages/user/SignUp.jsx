@@ -10,12 +10,13 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { createToken } from '../../redux/User/UserAction'
 
-class User extends Component{
+class SignUp extends Component{
     
     state = {
         email: null,
         password: null,
         name: null,
+        password_confirmation: null,
     }
 
     handleEmail = (e) => {
@@ -30,37 +31,94 @@ class User extends Component{
         })
     }
 
-    handleName = (e) => {
+    handlePasswordConfirmation = (e) => {
         this.setState({
-            name: e.targer.value
+            password_confirmation: e.target.value
         })
     }
 
-    notifyError = () => toast.error("Seus dados estão incorretos !");
+    handleName = (e) => {
+        this.setState({
+            name: e.target.value
+        })
+    }
 
-     signIn = async () => {
+    notifyError = (error) => toast.error(`${error} !`);
+       
+
+     signUp = async (e) => {
+         e.preventDefault()
+        if(!this.handleErrors()){
+            return false
+        }
+        debugger
         try{
-            const response = await api.post('/v1/sessions/',{
-                email: this.state.email,
-                password: this.state.password
+            const response = await api.post('/v1/users/',{
+                user: {
+                    email: this.state.email,
+                    password: this.state.password,
+                    password_confirmation: this.state.password_confirmation    
+                }
             })
             const { data: {authentication_token, email} } = response
             localStorage.setItem('email', email)
             this.props.history.goBack()
             this.props.createToken(authentication_token)
         }catch(e){
-            this.handleErrors()  
+            this.handleErrors(e.response.data[0])  
         }
     }
 
 
-    handleErrors = () => {
-        this.notifyError()
+    handleErrors = (e = null) => {
+        const errors = this.FieldsErrors() 
+
+        if(e !== null)
+            errors.push(e)
+        
+        errors.forEach( (field) => {
+            this.notifyError(field)
+        })
+
+        if(errors.length != 0)
+            return false
+        else
+            return true
     }
+
+    FieldsErrors = () => {
+        const { 
+            name,
+            email,
+            password,
+            password_confirmation
+        } = this.state
+
+        const errors = []
+
+        if(name === null)
+            errors.push("Preencha o campo nome")
+
+        if(email === null)
+            errors.push("Preencha o campo e-mail")
+
+        if (password === null)
+            errors.push("Preecha o campo senha")
+
+        if (password_confirmation === null)
+            errors.push("Preencha o campo confirme sua senha")
+
+        if (password_confirmation !== null && password_confirmation !== password)
+            errors.push("Senhas não coincidem")
+
+        return errors
+        
+    } 
+
     render(){
-        const signIn = (
+        const signUp = (
         <div className="sign-up">
-            <div className="form">
+            <form className="form">
                 <div className="card-header">
                     <h3>Olá, faça seu Cadastro</h3>
                 </div>
@@ -70,13 +128,15 @@ class User extends Component{
 
                     <Input holder="Senha" type="password" onChange={this.handlePassword} value={this.state.password}/>
                 
+                    <Input holder="Confirme sua senha" type="password" onChange={this.handlePasswordConfirmation} value={this.state.password_confirmation}/>
+
                     <Input holder="Nome" onChange={this.handleName} value={this.state.name}/>
 
                 </div>
                 <div className="card-footer">
-                    <Button value="Entrar" onClick={this.signIn}/>
+                    <Button value="Cadastrar" onClick={ e => this.signUp(e)}/>
                 </div>
-            </div>
+            </form>
         </div>
         )
 
@@ -90,7 +150,7 @@ class User extends Component{
             <>
             <div className="containerSignUp">
                {image}
-               {signIn}
+               {signUp}
             </div>
             <ToastContainer />
             </>
@@ -104,4 +164,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({createToken},dispatch)
 
-export default connect(mapStateToProps,mapDispatchToProps)(User)
+export default connect(mapStateToProps,mapDispatchToProps)(SignUp)
