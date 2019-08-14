@@ -13,7 +13,7 @@ const Header = (props) => {
         <header>
             <Link to="/">
                 <div className="logo">
-                    {props.token}
+                    Superime
                 </div>
             </Link>
             
@@ -30,11 +30,11 @@ const Header = (props) => {
                 </>
             :
                 <>
-                <Link to="/user">
+                <Link to="/user/sign-up">
                     <Button value="Registrar-se"/>
                 </Link>
 
-                <Link to="/user">
+                <Link to="/user/sign-in">
                     <Button value="Entrar"/>
                 </Link>
                 </>
