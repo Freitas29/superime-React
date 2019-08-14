@@ -5,6 +5,7 @@ import Button from '../../components/Button/Button'
 import {axiosUrl as api} from '../../services/api'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import { Redirect } from 'react-router-dom'
 
 class User extends Component{
     
@@ -37,6 +38,7 @@ class User extends Component{
 
             localStorage.setItem('token', authentication_token)
             localStorage.setItem('email', email)
+            this.props.history.goBack()
         }catch(e){
             this.handleErrors()  
         }
