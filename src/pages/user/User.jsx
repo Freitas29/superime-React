@@ -5,7 +5,9 @@ import Button from '../../components/Button/Button'
 import {axiosUrl as api} from '../../services/api'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
-import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { createToken } from '../../redux/User/UserAction'
 
 class User extends Component{
     
@@ -35,10 +37,9 @@ class User extends Component{
                 password: this.state.password
             })
             const { data: {authentication_token, email} } = response
-
-            localStorage.setItem('token', authentication_token)
             localStorage.setItem('email', email)
             this.props.history.goBack()
+            this.props.createToken(authentication_token)
         }catch(e){
             this.handleErrors()  
         }
@@ -84,4 +85,10 @@ class User extends Component{
     }
 }
 
-export default User
+const mapStateToProps = state => ({
+    token: state.user.token,
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({createToken},dispatch)
+
+export default connect(mapStateToProps,mapDispatchToProps)(User)
