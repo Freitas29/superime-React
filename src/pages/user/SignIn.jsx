@@ -59,9 +59,9 @@ class SignIn extends Component{
                 </div>
 
                 <div className="card-form">
-                    <Input holder="E-mail" onChange={this.handleEmail} value={this.state.email}/>
+                    <Input holder="E-mail" color="secondary" onChange={this.handleEmail} value={this.state.email}/>
 
-                    <Input holder="Senha" type="password" onChange={this.handlePassword} value={this.state.password}/>
+                    <Input holder="Senha" color="secondary" type="password" onChange={this.handlePassword} value={this.state.password}/>
                 </div>
                 <div className="card-footer">
                     <Button value="Entrar" onClick={this.signIn}/>

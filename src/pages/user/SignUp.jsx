@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './SignUp.css'
-import college from '../../assets/midoriya.jpg'
+import kimi from '../../assets/kimi.png'
 import Input from '../../components/Input/Input'
 import Button from '../../components/Button/Button'
 import {axiosUrl as api} from '../../services/api'
@@ -124,13 +124,13 @@ class SignUp extends Component{
                 </div>
 
                 <div className="card-form">
-                    <Input holder="E-mail" onChange={this.handleEmail} value={this.state.email}/>
+                    <Input holder="E-mail" color="dark" onChange={this.handleEmail} value={this.state.email}/>
 
-                    <Input holder="Senha" type="password" onChange={this.handlePassword} value={this.state.password}/>
+                    <Input holder="Senha"  color="dark" type="password" onChange={this.handlePassword} value={this.state.password}/>
                 
-                    <Input holder="Confirme sua senha" type="password" onChange={this.handlePasswordConfirmation} value={this.state.password_confirmation}/>
+                    <Input  color="dark" holder="Confirme sua senha" type="password" onChange={this.handlePasswordConfirmation} value={this.state.password_confirmation}/>
 
-                    <Input holder="Nome" onChange={this.handleName} value={this.state.name}/>
+                    <Input color="dark" holder="Nome" onChange={this.handleName} value={this.state.name}/>
 
                 </div>
                 <div className="card-footer">
@@ -142,7 +142,7 @@ class SignUp extends Component{
 
         const image = (
             <div className="image-background">
-                <img src={college} />
+                <img src={kimi} />
             </div> 
         )
 
