@@ -21,7 +21,7 @@ const Header = (props) => {
             { props.token ? 
                 <>
                     <Link to="/user/edit">
-                        <Button value="Perfil"/>
+                        <Button value={localStorage.getItem('name')}/>
                     </Link>
 
                     

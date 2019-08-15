@@ -60,8 +60,9 @@ class SignUp extends Component{
                     password_confirmation: this.state.password_confirmation    
                 }
             })
-            const { data: {authentication_token, email} } = response
+            const { data: {authentication_token,name, email} } = response
             localStorage.setItem('email', email)
+            localStorage.setItem('name',name)
             this.props.history.goBack()
             this.props.createToken(authentication_token)
         }catch(e){
