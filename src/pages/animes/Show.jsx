@@ -43,7 +43,7 @@ class Show extends Component{
         this.setState({
             id: data.anime.id,
             image: data.anime.image,
-            title: data.animetitle,
+            title: data.anime.title,
             description: data.anime.description,
             episodesCount: data.anime.episodesCount,
             status: data.anime.status,
@@ -70,7 +70,7 @@ class Show extends Component{
                 <Link 
                     to={{
                         pathname: `/animes/${animeId}/episodes/`,
-                        state: { animeId, episodeUrl: ep.url,episodeTitle: ep.title, episodes: this.state.episodes}
+                        state: { anime: this.state.title, animeId, episodeUrl: ep.url,episodeTitle: ep.title, episodes: this.state.episodes}
                     }}>    
                     <div className="video-title">
                         <p>{ep.title}</p>    
