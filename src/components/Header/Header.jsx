@@ -20,8 +20,8 @@ const Header = (props) => {
             <div className="links">
             { props.token ? 
                 <>
-                    <Link to="/user/edit">
-                        <Button value={localStorage.getItem('name')}/>
+                    <Link to="/user/edit/profile">
+                        <Button value={props.username}/>
                     </Link>
 
                     
@@ -47,6 +47,7 @@ const Header = (props) => {
 
 const mapStateToProps = state => ({
     token: state.user.token,
+    username: state.user.username
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({removeToken},dispatch)
