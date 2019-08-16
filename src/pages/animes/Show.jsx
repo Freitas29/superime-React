@@ -66,18 +66,18 @@ class Show extends Component{
         const animeId = this.state.id
         const episodes = this.state.episodes && this.state.episodes.map(ep => (
             ep.url.includes('error') ? <p>Episódio indisponivel</p> :
-            <div key={ep.id}>
-                <Link 
-                    to={{
-                        pathname: `/animes/${animeId}/episodes/`,
-                        state: { anime: this.state.title, animeId, episodeUrl: ep.url,episodeTitle: ep.title, episodes: this.state.episodes}
-                    }}>    
+            <Link
+                key={ep.id}
+                to={{
+                    pathname: `/animes/${animeId}/episodes/`,
+                    state: { anime: this.state.title, animeId, episodeUrl: ep.url,episodeTitle: ep.title, episodes: this.state.episodes}
+                }}>  
+                <div key={ep.id}>
                     <div className="video-title">
                         <p>{ep.title}</p>    
                     </div>
-                </Link>
-            </div>
-            
+                </div>
+            </Link>        
         ))
         
         return(
