@@ -11,10 +11,10 @@
     font-weight: bold;
     transition: all 0.5s;
     outline: none;
+    cursor: pointer;
 }
 
 .btn:hover{
-    cursor: pointer;
     background-color: rgba(32,103,250,1) ;
     border: none;
 }
