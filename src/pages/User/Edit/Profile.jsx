@@ -31,15 +31,16 @@ function Profile(props){
         const id = localStorage.getItem('id')
         try{
             const response = await api.patch(`v1/users/${id}`, {
+            user: {
                 name,
                 email,
                 password
+            }
             }, {
                 headers: {
                     "Content-Type": "application/json",
                 },
             })
-            debugger
             props.updateEmail(response.data.email)
             props.updateUsername(response.data.name)
             notifySuccess("Seus dados foram atualizados")
