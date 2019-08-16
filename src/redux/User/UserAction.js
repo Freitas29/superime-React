@@ -43,6 +43,6 @@ function setName(name){
 }
 
 function setEmail(email){
-    let data = localStorage.setItem('email', email)
+    localStorage.setItem('email', email)
     return localStorage.getItem('email')
 }

@@ -82,7 +82,7 @@ class SignUp extends Component{
             this.notifyError(field)
         })
 
-        if(errors.length != 0)
+        if(errors.length !== 0)
             return false
         else
             return true
@@ -144,7 +144,7 @@ class SignUp extends Component{
 
         const image = (
             <div className="image-background">
-                <img src={kimi} />
+                <img src={kimi} alt="background"/>
             </div> 
         )
 

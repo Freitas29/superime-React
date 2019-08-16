@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './Show.css'
 import { graphqlUrl } from '../../services/api'
 import { gql } from 'apollo-boost'
-import { Link, NavLink } from 'react-router-dom' 
+import { Link } from 'react-router-dom' 
 
 class Show extends Component{
 
@@ -84,7 +84,7 @@ class Show extends Component{
             <div className="details">
                 <div className="details-header">
                     <div className="img-box">
-                        <img src={this.state.image} />
+                        <img src={this.state.image} alt={this.state.image}/>
                     </div>
                     <div className="about">
                         <h1>{this.state.title}</h1>

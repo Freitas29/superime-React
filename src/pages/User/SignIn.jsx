@@ -74,7 +74,7 @@ class SignIn extends Component{
 
         const image = (
             <div className="image-background">
-                <img src={chihiro} />
+                <img src={chihiro} alt="imag background"/>
             </div> 
         )
 

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const Card = props =>
     <div className="card">
         <div className='card-image'>
-            <img src={props.image}/>
+            <img src={props.image} alt={props.image}/>
         </div>
 
         <div className="card-details">
