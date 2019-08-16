@@ -24,9 +24,9 @@ const Header = (props) => {
                         <Button value={props.username}/>
                     </Link>
 
-                    
+                    <Link to="/">
                         <Button value="Sair" onClick={props.removeToken}/>
-                    
+                    </Link>
                 </>
             :
                 <>
