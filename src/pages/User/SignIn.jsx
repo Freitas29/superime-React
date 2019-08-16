@@ -37,9 +37,10 @@ class SignIn extends Component{
                 email: this.state.email,
                 password: this.state.password
             })
-            const { data: {authentication_token,name, email} } = response
+            const { data: {id,authentication_token,name, email} } = response
             localStorage.setItem('email', email)
             localStorage.setItem('name', name)
+            localStorage.setItem('id', id)
             this.props.history.goBack()
             this.props.createToken(authentication_token)
         }catch(e){
