@@ -5,6 +5,20 @@ export function removeToken(){
     }
 }
 
+
+export function updateUsername(name){
+    return{
+        type: "USERNAME_CHANGED",
+        payload: setName(name),
+    }
+}
+
+export function updateEmail(email){
+    return{
+        type: "EMAIL_CHANGED",
+        payload: setEmail(email)
+    }
+}
 export function createToken(token){
     return {
         type: "CREATE_TOKEN_CHANGED",
@@ -21,4 +35,14 @@ function setStorage(token){
 function removeStorage(){
     localStorage.removeItem('token')
     return localStorage.getItem('token')
+}
+
+function setName(name){
+    localStorage.setItem('name', name)
+    return localStorage.getItem('name')
+}
+
+function setEmail(email){
+    let data = localStorage.setItem('email', email)
+    return localStorage.getItem('email')
 }
