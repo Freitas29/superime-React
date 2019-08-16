@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import './Profile.scss'
-import Sidebar from './Sidebar'
+import Sidebar from '../../../components/Sidebar/Sidebar'
 import Input from '../../../components/Input/Input'
 import Button from '../../../components/Button/Button'
 import {axiosUrl as api} from '../../../services/api.js'

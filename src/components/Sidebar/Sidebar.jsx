@@ -9,13 +9,13 @@ export default function Sidebar(){
             <ul>
                 <Link to="profile">
                     <li>   
-                        Profile
+                        Perfil
                     </li>
                 </Link>
 
                 <Link to="favorites">
                     <li>
-                        Favorites
+                        Favoritos
                     </li>
                 </Link>
             </ul>     
