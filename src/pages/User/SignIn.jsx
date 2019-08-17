@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { createToken } from '../../redux/User/UserAction'
+import { createToken, updateUsername, updateEmail } from '../../redux/User/UserAction'
 
 class SignIn extends Component{
     
@@ -38,10 +38,10 @@ class SignIn extends Component{
                 password: this.state.password
             })
             const { data: {id,authentication_token,name, email} } = response
-            localStorage.setItem('email', email)
-            localStorage.setItem('name', name)
             localStorage.setItem('id', id)
             this.props.history.goBack()
+            this.props.updateUsername(name)
+            this.props.updateEmail(email)
             this.props.createToken(authentication_token)
         }catch(e){
             this.handleErrors()  
@@ -94,6 +94,6 @@ const mapStateToProps = state => ({
     token: state.user.token,
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators({createToken},dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({createToken, updateUsername, updateEmail},dispatch)
 
 export default connect(mapStateToProps,mapDispatchToProps)(SignIn)

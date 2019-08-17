@@ -54,7 +54,6 @@ class Episodes extends Component {
     }
 
     handleAnime = (data) => { 
-        debugger  
         let episodes = data.anime.episodes
         let title = data.anime.episodes[0].title
         let url = data.anime.episodes[0].url

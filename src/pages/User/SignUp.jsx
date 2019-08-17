@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { createToken } from '../../redux/User/UserAction'
+import { createToken, updateUsername, updateEmail } from '../../redux/User/UserAction'
 
 class SignUp extends Component{
     
@@ -51,21 +51,21 @@ class SignUp extends Component{
         if(!this.handleErrors()){
             return false
         }
-        debugger
         try{
             const response = await api.post('/v1/users/',{
                 user: {
                     email: this.state.email,
                     password: this.state.password,
-                    password_confirmation: this.state.password_confirmation    
+                    password_confirmation: this.state.password_confirmation,
+                    name: this.state.name  
                 }
             })
             const { data: {id,authentication_token,name, email} } = response
-            localStorage.setItem('email', email)
-            localStorage.setItem('name',name)
             localStorage.setItem('id',id)
-            this.props.history.goBack()
+            this.props.updateEmail(email)
+            this.props.updateUsername(name)
             this.props.createToken(authentication_token)
+            this.props.history.goBack()
         }catch(e){
             this.handleErrors(e.response.data[0])  
         }
