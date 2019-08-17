@@ -57,7 +57,7 @@ class SignIn extends Component{
         <div className="sign-in">
             <div className="form">
                 <div className="card-header">
-                    <h3>Olá, faça seu login ;)</h3>
+                    <h3>Olá, faça seu login</h3>
                 </div>
 
                 <div className="card-form">

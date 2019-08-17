@@ -7,20 +7,23 @@
     gap: 4%;
     height: 90vh;
     overflow: hidden;
+    align-items: center;
+    justify-items: center;
 }
 
 .sign-in{
     padding: 2%;
-    margin-left: 2%;
-    width: 85%;
+    width: 50%;
     position: relative;
     background-color: #292b29;
-    height: 70vh;
+    height: 45vh;
     border-radius: 25px;
     padding: 15px;
     display: flex;
-    margin-top: 15px;
     transition: all 0.5s;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15%;
 }
 
 .sign-in:hover{
@@ -51,12 +54,13 @@ input{
 
 .card-header h3{
     color: #fff;
-    text-transform: uppercase
+    font-size: 23px;
 }
 
 .card-form{
     width: 100%;
     height: auto;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,4 +71,5 @@ input{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }

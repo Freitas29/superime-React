@@ -6,12 +6,22 @@
     gap: 4%;
     height: 90vh;
     overflow: hidden;
+    align-items: center;
+    justify-items: center;
 }
 
 .sign-up{
-    
     padding: 2%;
-    width: 100%;
+    width: 75%;
+    position: relative;
+    height: 45vh;
+    border-radius: 25px;
+    padding: 15px;
+    display: flex;
+    transition: all 0.5s;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15%;
 }
 
 .image-background{
@@ -62,7 +72,7 @@ input{
 .card-header h3{
     text-align: center;
     color: #fff;
-    text-transform: uppercase
+    font-size: 23px;
 }
 
 .card-form{

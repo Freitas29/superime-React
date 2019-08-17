@@ -56,15 +56,15 @@ function Profile(props){
             <h1>Olá, {props.username}</h1>
 
             <div className="fields">
-                <Input holder={name} value={name} onChange={e => setName(e.target.value)}/>
+                <Input color="dark" holder={name} value={name} onChange={e => setName(e.target.value)}/>
 
                 <div className="field-password">
-                    <Input holder={"Atualizar senha"} value={password} onChange={e => setPassword(e.target.value)} type={type}/>
+                    <Input color="dark"  holder={"Atualizar senha"} value={password} onChange={e => setPassword(e.target.value)} type={type}/>
                    
                     <Button value="👁" onClick={() => setType(type === "password" ? "text" : "password")}/>
                 </div>
 
-                <Input holder={email} value={email} onChange={e => setEmail(e.target.value)}/>
+                <Input color="dark" holder={email} value={email} onChange={e => setEmail(e.target.value)}/>
 
                 <Button value="Atualizar" onClick={() => save()} />
             </div>

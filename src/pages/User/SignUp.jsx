@@ -164,6 +164,6 @@ const mapStateToProps = state => ({
     token: state.user.token,
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators({createToken},dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({createToken, updateUsername, updateEmail},dispatch)
 
 export default connect(mapStateToProps,mapDispatchToProps)(SignUp)
