@@ -2,7 +2,7 @@ body {
   margin: 0; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to right, #7474bf, #348ac7);
+  background: #141526;
   overflow-x: hidden;
 }
 
@@ -12,6 +12,5 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: 'Lexend Peta', sans-serif;
 }

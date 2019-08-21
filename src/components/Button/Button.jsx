@@ -1,8 +1,8 @@
 import React from 'react';
-import './Button.css'
+import './Button.scss'
 
 
 const Button = props =>
-    <button className="btn" onClick={props.onClick}>{props.value}</button>
+    <button className={ props.type ? props.type : "btn"} onClick={props.onClick}>{props.value}</button>
 
 export default Button;

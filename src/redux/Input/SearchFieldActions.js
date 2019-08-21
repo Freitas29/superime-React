@@ -20,29 +20,3 @@ export function loading(){
         payload: true,
     }
 }
-
-
-export const fetchAnime = value =>{
-    return dispach => {
-        dispach(loading())
-        axiosUrl.get('/v1/animes/',{
-            params: {
-                title: value
-            }
-        }).
-        then(function(response){
-            dispach(fetchAnimeAsync(response))
-        })
-    }
-}
-
-export const scrapAnime = value =>{
-    return dispach => {
-        dispach(loading())
-        axiosUrl.get(`/v1/animes/data/${value}`,{
-        }).
-        then(function(response){
-            dispach(fetchAnimeAsync(response))
-        })
-    }
-}

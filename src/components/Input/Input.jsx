@@ -1,7 +1,7 @@
 import React from 'react'
-import './Input.css'
+import './Input.scss'
 
 const Input = props => 
-    <input className="input-search" placeholder={props.holder} onChange={props.onChange}/>
+    <input type={props.type || "text"} className={`input-search ${props.color || "primary"} `} placeholder={props.holder} onChange={props.onChange}/>
 
 export default Input
