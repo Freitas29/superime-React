@@ -1,19 +1,17 @@
 .container-favorites{
     position: relative;
     margin-left: 20%;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     padding: 20px;
-    display: block;
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 10px;
     background-color: white;
     grid-gap: 4%;
-    gap: 4%;
 
     h1{
         width: 100%;
         display: block;
     }
-
 }

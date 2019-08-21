@@ -1,52 +1,43 @@
 import React, {useState, useEffect} from 'react'
 import Sidebar from '../../../components/Sidebar/Sidebar';
 import './Favorites.scss'
-import { graphqlUrl as api } from '../../../services/api'
-import { gql } from 'apollo-boost'
-
+import { MiniCard } from '../../../components/Card/Card'
+import { axiosUrl as api } from '../../../services/api'
 
 export default function Favorites(){
    
     const [favorites, setFavorites] = useState('')
 
     useEffect(() => {
-        function fetchFavorites(id){
-            api
-            .query({
-                query: gql`{
-                    favorite(userId: ${id}) {
-                        id
-                        anime {
-                            id
-                            title
-                        }
-                    }
-                }`
-            }).then(response =>  saveData(response.data))
-        }
+        async function fetchFavorites(token){
+            let response = await api.get('/v1/favorites', {
+                headers: {
+                    "X-User-Token": token 
+                }
+            })
 
-        const id = localStorage.getItem('id')
-        fetchFavorites(id)
+            setFavorites(response.data)
+        }
+        const token = localStorage.getItem('token')
+        fetchFavorites(token)
     }, []);
 
 
-    function saveData(data){
-        setFavorites(data.favorite)
-    }
-    
     return(
         <>
         <Sidebar />
         <div className="container-favorites">
-            <h1>
                 {favorites && favorites.map(favorite => (
-                    <div key={favorite.title}>
-                        <p>
-                            {favorite.anime.title}
-                        </p>
+                    <div key={favorite.id} className="wraper">
+                        <MiniCard 
+                            image={favorite.image}
+                            title={favorite.title}
+                            desc={favorite.description}
+                            id={favorite.id}
+                            favorite={favorite.favorited}
+                        />
                     </div>
                 ))}
-            </h1>
         </div>
         </>
     )            
