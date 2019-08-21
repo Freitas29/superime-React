@@ -1,0 +1,37 @@
+.btn{
+    background-color: rgba(50,53,80,1);
+    border: none;
+    padding: 6px;
+    width: 150px;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 18px;
+    margin-right: 5px;
+    margin-left: 5px;
+    font-weight: bold;
+    transition: all 0.5s;
+    outline: none;
+    cursor: pointer;
+
+    &:hover{
+        background-color: rgba(32,103,250,1);
+        border: none;
+    }
+}
+
+
+.btn-icon{
+    background: linear-gradient(to left, #966575, #475571);
+    padding: 6px;
+    border-radius: 25px;
+    border:none;
+    cursor: pointer;
+    margin: 0 5px;
+    outline: none;
+    text-align: center;
+    transition: all 0.5s;
+    
+    &:hover{
+        background: #475571;    
+    }
+}
