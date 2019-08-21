@@ -48,7 +48,6 @@ function setEmail(email){
 }
 
 function clearStorage(){
-    debugger
     localStorage.removeItem('token')
     localStorage.removeItem('email')
     localStorage.removeItem('name')
