@@ -32,10 +32,6 @@ function setStorage(token){
     return localStorage.getItem('token')
 }
 
-function removeStorage(){
-    localStorage.removeItem('token')
-    return localStorage.getItem('token')
-}
 
 function setName(name){
     localStorage.setItem('name', name)

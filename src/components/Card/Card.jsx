@@ -1,4 +1,4 @@
-import React, {useState , useEffect} from 'react';
+import React, {useState} from 'react';
 import './Card.css'
 import Button from '../Button/Button'
 import { Link } from 'react-router-dom'
