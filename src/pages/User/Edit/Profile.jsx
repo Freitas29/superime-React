@@ -9,7 +9,7 @@ import { bindActionCreators } from 'redux'
 import { updateEmail, updateUsername } from '../../../redux/User/UserAction'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
-import { EyeBroken, Eye} from '../../../components/Emojis/EyeBroken'
+import { EyeBroken, Eye} from '../../../components/Emojis/Emojis'
 
 function Profile(props){  
     

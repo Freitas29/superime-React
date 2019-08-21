@@ -22,6 +22,9 @@ export default function Main(props){
             axiosUrl.get('/v1/animes/',{
                 params: {
                     title: anime
+                },
+                headers: {
+                    "X-User-Token": localStorage.getItem('token') 
                 }
             }).then(response => {
                 setAnimeList(response)
@@ -59,6 +62,8 @@ export default function Main(props){
                   image={anime.image}
                   title={anime.title}
                   desc={anime.description}
+                  favorite={anime.favorited}
+                  favorite_id={anime.favorite_id}
                   id={anime.id} />            
         ))
         return(
