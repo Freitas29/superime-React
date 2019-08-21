@@ -63,7 +63,6 @@ export default function Main(props){
                   title={anime.title}
                   desc={anime.description}
                   favorite={anime.favorited}
-                  favorite_id={anime.favorite_id}
                   id={anime.id} />            
         ))
         return(

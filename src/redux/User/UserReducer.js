@@ -9,7 +9,9 @@ export default function(state = INIT_STATE, action){
         case 'REMOVE_TOKEN_CHANGED':
             return {
                 ...state, 
-                token: action.payload
+                token: null,
+                username: null,
+                email: null
             }
         case 'CREATE_TOKEN_CHANGED':
             return {

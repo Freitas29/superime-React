@@ -1,7 +1,7 @@
 export function removeToken(){
     return{
         type: "REMOVE_TOKEN_CHANGED",
-        payload: removeStorage()
+        payload: clearStorage()
     }
 }
 
@@ -45,4 +45,12 @@ function setName(name){
 function setEmail(email){
     localStorage.setItem('email', email)
     return localStorage.getItem('email')
+}
+
+function clearStorage(){
+    debugger
+    localStorage.removeItem('token')
+    localStorage.removeItem('email')
+    localStorage.removeItem('name')
+    localStorage.removeItem('id')
 }
