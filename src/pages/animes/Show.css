@@ -63,3 +63,40 @@ a{
 .more .field{
     display: inline;
 }
+
+
+@media (max-width: 780px){
+
+    .details{
+        margin-right: 15px;
+        margin-left: 15px;
+        background-color: rgba(41,79,168,0.3);
+        color: #fdfdfdcf;
+        transform: scale(0.9);
+        padding: 0px;
+        border-radius: 25px;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap
+    }
+
+    .details-header{
+        background-color: rgba(41,79,168,0.3);
+        color: #fdfdfdcf;
+        transform: scale(0.9);
+        border-radius: 25px;
+        height: auto;
+        display: grid !important;
+        grid-template-columns: repeat(1, 1fr)
+    }
+
+
+    .details .details-header img{
+        width: 100%;
+        border-radius: 25px;
+    }
+
+    .details .details-header .about{
+        width: 100%;
+    }
+}
