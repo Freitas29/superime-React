@@ -136,7 +136,7 @@ class SignUp extends Component{
 
                 </div>
                 <div className="card-footer">
-                    <Button value="Cadastrar" onClick={ e => this.signUp(e)}/>
+                    <Button type="btn-sm" value="Cadastrar" onClick={ e => this.signUp(e)}/>
                 </div>
             </form>
         </div>

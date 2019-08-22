@@ -66,7 +66,7 @@ class SignIn extends Component{
                     <Input holder="Senha" color="secondary" type="password" onChange={this.handlePassword} value={this.state.password}/>
                 </div>
                 <div className="card-footer">
-                    <Button value="Entrar" onClick={this.signIn}/>
+                    <Button type="btn-sm" value="Entrar" onClick={this.signIn}/>
                 </div>
             </div>
         </div>
