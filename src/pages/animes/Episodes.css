@@ -32,3 +32,36 @@
     width: 40%;
     overflow-y: scroll;
 }
+
+@media (max-width: 780px){
+    .list-episodes{
+        margin-left: 2%;
+        height: 400px;
+        width: 100%;
+        overflow-y: scroll;    
+    }
+
+    .episode{
+        background-color: rgba(41,79,168,0.4);
+        padding: 2px 15px;
+        margin: 15px 0px 15px 0px;
+        border-radius: 25px;
+        transition: all 0.5s;
+        width: 100%;
+    }
+
+    .player div{
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
+
+@media (min-width: 1024px){
+    .list-episodes{
+        margin-left: 2%;
+        height: 400px;
+        width: 30%;
+        overflow-y: scroll;    
+    }
+}
