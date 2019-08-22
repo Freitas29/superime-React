@@ -116,6 +116,20 @@
         }
     }
     
+    .mini-card{
+        height: 160px !important;
+    
+        img{
+            height: 100% !important;
+        }
+
+        .card-details h1{
+            font-size: 11px !important;
+            text-overflow: ellipsis;
+        }
+    }
+    
+
 }
 
 
