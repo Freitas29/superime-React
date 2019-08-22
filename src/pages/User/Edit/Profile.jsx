@@ -61,13 +61,13 @@ function Profile(props){
                 <div className="field-password">
                     <Input color="dark"  holder={"Atualizar senha"} value={password} onChange={e => setPassword(e.target.value)} type={type}/>
                    
-                    <Button value={type === "password" ?  <Eye /> : <EyeBroken />} onClick={() => setType(type === "password" ? "text" : "password")}/>
+                    <Button type="btn-sm" value={type === "password" ?  <Eye /> : <EyeBroken />} onClick={() => setType(type === "password" ? "text" : "password")}/>
                     
                 </div>
 
                 <Input color="dark" holder={email} value={email} onChange={e => setEmail(e.target.value)}/>
 
-                <Button value="Atualizar" onClick={() => save()} />
+                <Button type="btn-sm" value="Atualizar" onClick={() => save()} />
             </div>
         </div>
         <ToastContainer />

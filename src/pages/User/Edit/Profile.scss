@@ -28,3 +28,18 @@
         }
     }
 }
+
+@media (max-width: 780px){
+    .container-profile{
+        margin-left: 30%;
+
+        h1{
+            font-size: 11px;
+            width: 100%;
+            display: block;
+        }
+        .fields{
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

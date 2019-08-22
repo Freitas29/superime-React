@@ -96,3 +96,50 @@ input{
     width: 50%;
     height: 48px;
 }
+
+@media (max-width: 768px){
+    .sign-up {
+        width: 85%;
+        position: relative;
+        height: 50%;
+        border-radius: 25px;
+        padding: 15px;
+        display: flex;
+        transition: all 0.5s;
+        margin-bottom: 15%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-signUp{
+        margin-left: 2%;
+        width: 90%;
+        height: 100%;
+        position: relative;
+        background-color: #292b29;
+        border-radius: 25px;
+        padding: 15px;
+        display: flex;
+        margin-top: 15px;
+        transition: all 0.5s;
+    }
+
+    .image-background {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .image-background{
+        width: 100%;
+        height: 50vh;
+    }
+
+
+    .card-header h3 {
+        text-align: center;
+        color: #fff;
+        font-size: 11px;
+    }
+
+}
+    

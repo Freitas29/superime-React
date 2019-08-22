@@ -73,3 +73,24 @@ input{
     align-items: center;
     position: relative;
 }
+
+@media (max-width: 780px){
+    .image-background {
+        width: 200%;
+        height: 90vh;
+    }
+
+    .sign-in{
+        width: 100%;
+        position: relative;
+        background-color: #292b29;
+        height: 25vh;
+        border-radius: 25px;
+        padding: 15px;
+        display: flex;
+        transition: all 0.5s;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15%;
+    }
+}

@@ -66,10 +66,10 @@ export default function Main(props){
                   id={anime.id} />            
         ))
         return(
-            <div className="Main">
+            <div className="Main" style={{ overflow: loading ? 'hidden' : 'visible'}}>
                 <div className={`form-group ${loading ?  'searching' : ''}`}>
                     <Input holder="Procure por seu anime!" value={props.value} onChange={e => setAnime(e.target.value)}/>
-                    <Button value="Buscar" onClick={e => scraperAnime()}/>
+                    <Button type="btn-sm" value="Buscar" onClick={e => scraperAnime()}/>
                 </div>
                     {loading && <div className="mainLoading">
                         <Loading />

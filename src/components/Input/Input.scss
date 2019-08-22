@@ -63,3 +63,20 @@
         color: #babaca;
     }
 }
+
+
+
+@media (max-width: 780px){
+    .input-search{
+        width: 80%;
+        height: 5px;
+        border: none;
+        border-radius: 15px;
+        outline: none;
+        padding: 8px;
+        color: #fff;
+        transition: all 1.5s;
+        font-size: 10px;
+        font-weight: bold;
+    }
+}
